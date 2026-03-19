@@ -1,0 +1,21 @@
+{
+  "model_name_or_path": "bert-base-chinese",
+  "tokenizer_name_or_path": "bert-base-chinese",
+  "corpus_file": "data/processed/merged_ner/corpus.txt",
+  "output_dir": "outputs/continue_pretrain_mlm",
+  "max_length": 128,
+  "train_batch_size": 32,
+  "eval_batch_size": 64,
+  "learning_rate": 5e-5,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "num_epochs": 3,
+  "grad_accum_steps": 1,
+  "max_grad_norm": 1.0,
+  "mlm_probability": 0.15,
+  "precision": "fp16",
+  "gradient_checkpointing": false,
+  "dev_ratio": 0.02,
+  "num_workers": 0,
+  "seed": 42
+}

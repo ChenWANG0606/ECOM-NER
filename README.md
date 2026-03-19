@@ -199,6 +199,25 @@ python scripts/build_corpus.py \
   --output-file data/processed/merged_ner/corpus.txt
 ```
 
+然后执行 Masked LM 继续预训练：
+
+```bash
+python scripts/continue_pretrain.py \
+  --config scripts/configs/continue_pretrain_mlm.json
+```
+
+默认配置会读取 `data/processed/merged_ner/corpus.txt`，并输出到
+`outputs/continue_pretrain_mlm/`。其中最关键的产物有：
+
+- `best_model/`：完整 MLM checkpoint，可继续做语言模型训练或评估
+- `best_encoder/`：只保留 encoder 权重和 tokenizer，适合后续 NER 微调
+- `best_metrics.json`：最佳 epoch 的 MLM loss
+- `training_log.json`：每个 epoch 的训练日志
+
+如果你想把继续预训练后的编码器用于实体识别训练，只需要把
+`scripts/configs/global_pointer_baseline.json` 里的 `model_name_or_path`
+改成 `outputs/continue_pretrain_mlm/best_encoder` 即可。
+
 ## 6. 训练配置说明
 
 默认配置字段如下：
@@ -222,4 +241,3 @@ python scripts/build_corpus.py \
 - 模型推理：[predict.py](/Users/king/Documents/实习/虾皮/NER/scripts/predict.py)
 - 标签映射：[labels.py](/Users/king/Documents/实习/虾皮/NER/src/ecom_ner/labels.py)
 - 模型实现：[modeling.py](/Users/king/Documents/实习/虾皮/NER/src/ecom_ner/modeling.py)
-
