@@ -21,6 +21,8 @@ ENV/
 # Logs
 *.log
 nohup.out
+outputs/
+artifacts/
 
 # Build and packaging artifacts
 build/
@@ -38,18 +40,19 @@ dist/
 *.pt
 *.pth
 *.onnx
+*.safetensors
 *.txt
 
 # Local data and experiment outputs
 data/
 
-# Keep nested project data rules aligned with the existing subproject
-gaiic2022-track2-commodity-title-entity-recognition/data/best_model/*
-gaiic2022-track2-commodity-title-entity-recognition/data/contest_data/*
-gaiic2022-track2-commodity-title-entity-recognition/data/model_data/*
-gaiic2022-track2-commodity-title-entity-recognition/data/pretrain_model/*
-gaiic2022-track2-commodity-title-entity-recognition/data/public_data/*
-gaiic2022-track2-commodity-title-entity-recognition/data/submission/*
-gaiic2022-track2-commodity-title-entity-recognition/data/tmp_data/*
-gaiic2022-track2-commodity-title-entity-recognition/code/nohup.out
+# Keep archived legacy project data rules aligned with the original subproject
+legacy/gaiic2022-track2-commodity-title-entity-recognition/data/best_model/*
+legacy/gaiic2022-track2-commodity-title-entity-recognition/data/contest_data/*
+legacy/gaiic2022-track2-commodity-title-entity-recognition/data/model_data/*
+legacy/gaiic2022-track2-commodity-title-entity-recognition/data/pretrain_model/*
+legacy/gaiic2022-track2-commodity-title-entity-recognition/data/public_data/*
+legacy/gaiic2022-track2-commodity-title-entity-recognition/data/submission/*
+legacy/gaiic2022-track2-commodity-title-entity-recognition/data/tmp_data/*
+legacy/gaiic2022-track2-commodity-title-entity-recognition/code/nohup.out
 !*.gitkeep
