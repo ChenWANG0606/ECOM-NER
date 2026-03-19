@@ -1,6 +1,6 @@
 {
-  "model_name_or_path": "bert-base-chinese",
-  "tokenizer_name_or_path": "bert-base-chinese",
+  "model_name_or_path": "./bert_base",
+  "tokenizer_name_or_path": "./bert_base",
   "corpus_file": "data/processed/merged_ner/corpus.txt",
   "output_dir": "outputs/continue_pretrain_mlm",
   "max_length": 128,
