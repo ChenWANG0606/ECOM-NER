@@ -68,7 +68,7 @@ class LineByLineMlmDataset(Dataset):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Continue pretraining a masked language model on plain-text corpus.")
-    parser.add_argument("--config", type=Path, default=Path("scripts/configs/continue_pretrain_mlm.json"))
+    parser.add_argument("--config", type=Path, default=Path("configs/continue_pretrain_mlm.json"))
     return parser.parse_args()
 
 
