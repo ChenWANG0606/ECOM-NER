@@ -1,0 +1,55 @@
+.DS_Store
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+ENV/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Editor and IDE settings
+.vscode/
+.idea/
+
+# Logs
+*.log
+nohup.out
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+*.tar
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Model checkpoints and large binary artifacts
+*.bin
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.txt
+
+# Local data and experiment outputs
+data/
+
+# Keep nested project data rules aligned with the existing subproject
+gaiic2022-track2-commodity-title-entity-recognition/data/best_model/*
+gaiic2022-track2-commodity-title-entity-recognition/data/contest_data/*
+gaiic2022-track2-commodity-title-entity-recognition/data/model_data/*
+gaiic2022-track2-commodity-title-entity-recognition/data/pretrain_model/*
+gaiic2022-track2-commodity-title-entity-recognition/data/public_data/*
+gaiic2022-track2-commodity-title-entity-recognition/data/submission/*
+gaiic2022-track2-commodity-title-entity-recognition/data/tmp_data/*
+gaiic2022-track2-commodity-title-entity-recognition/code/nohup.out
+!*.gitkeep
