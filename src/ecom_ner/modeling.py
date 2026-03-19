@@ -60,10 +60,10 @@ class GlobalPointer(nn.Module):
         logits = torch.einsum("bmhd,bnhd->bhmn", qw, kw) / math.sqrt(self.head_size)
         if attention_mask is not None:
             mask = attention_mask[:, None, None, :].bool()
-            logits = logits.masked_fill(~mask, -1e12)
-            logits = logits.masked_fill(~mask.transpose(-1, -2), -1e12)
+            logits = logits.masked_fill(~mask, torch.finfo(logits.dtype).min)
+            logits = logits.masked_fill(~mask.transpose(-1, -2), torch.finfo(logits.dtype).min)
         lower_triangle = torch.tril(torch.ones(seq_len, seq_len, device=logits.device, dtype=torch.bool), diagonal=-1)
-        logits = logits.masked_fill(lower_triangle[None, None, :, :], -1e12)
+        logits = logits.masked_fill(lower_triangle[None, None, :, :],torch.finfo(logits.dtype).min)
         return logits
 
 

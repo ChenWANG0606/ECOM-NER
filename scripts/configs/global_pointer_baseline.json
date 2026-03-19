@@ -1,5 +1,5 @@
 {
-  "model_name_or_path": "bert-base-chinese",
+  "model_name_or_path": "./bert_base",
   "train_file": "data/processed/merged_ner/train_merged.jsonl",
   "dev_file": "data/processed/merged_ner/dev.jsonl",
   "label_file": "data/processed/merged_ner/labels.json",
